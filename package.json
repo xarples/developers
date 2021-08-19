@@ -1,0 +1,27 @@
+{
+  "name": "accounts",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "bootstrap": "lerna bootstrap",
+    "build": "lerna run build --stream",
+    "dev": "lerna run dev --stream",
+    "generate": "lerna run generate --stream",
+    "start": "lerna run start --stream"
+  },
+  "devDependencies": {
+    "@nuxt/types": "^2.15.6",
+    "@types/cuid": "^2.0.1",
+    "@types/date-fns": "^2.6.0",
+    "@types/google-protobuf": "^3.15.2",
+    "@types/ioredis": "^4.26.4",
+    "@types/node": "^15.6.0",
+    "lerna": "^4.0.0",
+    "nodemon": "^2.0.7",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.2.4"
+  },
+  "dependencies": {}
+}

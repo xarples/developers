@@ -1,0 +1,23 @@
+version: '3.9'
+
+services:
+  developers:
+    container_name: developers-frontend
+    build:
+      context: .
+      dockerfile: ./packages/developers-frontend/development.Dockerfile
+    restart: on-failure
+    ports:
+      - 5002:5002
+    environment:
+      HOST: 0.0.0.0
+      PORT: 5002
+      NODE_ENV: development
+      OAUTH_SERVER_HOST: http://localhost:5000
+      GRPC_SERVER_HOST: server
+      GRPC_SERVER_PORT: 5001
+    volumes:
+      - ./packages/developers-frontend:/usr/src/accounts/packages/developers-frontend
+      - /usr/src/accounts/node_modules
+    depends_on:
+      - server
